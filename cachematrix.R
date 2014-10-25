@@ -32,7 +32,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Return the inverse matrix of x, x must be a object created by "makeCacheMatrix"
 cacheSolve <- function(x, ...) {
-  i <- x$getmean()
+  i <- x$getInverse()
   
   # Check if there is a stored inverse matrix
   if(!is.null(i)) {
@@ -47,7 +47,7 @@ cacheSolve <- function(x, ...) {
   i <- solve(x$get(), ...)
   
   # store the inverse matrix in the object
-  x$setmean(i)
+  x$setInverse(i)
   
   # return the calculated inverse matrix
   i
